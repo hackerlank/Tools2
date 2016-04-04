@@ -1,0 +1,15 @@
+create procedure spInsertToDinhDanh
+@SoCMT nvarchar(50),
+@SoGCN nvarchar(50)
+as
+begin
+if(object_id('tblDinhDanh') is null)
+	CREATE TABLE [tblDinhDanh](
+		[SoGCN] [nvarchar](50) NULL,
+		[SoCMT] [nvarchar](50) NULL
+	) ON [PRIMARY]
+	
+insert into tblDinhDanh(SoGCN, SoCMT)
+Values (N''+@SoGCN+'',N''+@SoCMT+'')
+
+end

@@ -1,0 +1,17 @@
+CREATE PROCEDURE sp_SMSDichVu2
+	@TenQuan nvarchar(200),
+AS
+BEGIN
+select hs.SoPhatHanhGCN as SoGCN,ch.HoTen+';'+td.DiaChi +';'' N'+@TenQuan+';'+dvhc.Ten +';So thua:'+ td.SoThua+';To ban do: '+ td.ToBanDo +';Dien tich:'+convert(nvarchar(50),td.DienTich) +';So GCN: '+ hs.SoPhatHanhGCN as NoiDung
+	from [dbo].[tblChu] as ch
+	inner join [dbo].[tblChuHoSoCapGCN] as chs on ch.MaChu = chs.MaChu
+	left join [dbo].[tblHoSoCapGCN] as hs on chs.MaHoSoCapGCN = hs.MaHoSoCapGCN
+	inner join [dbo].[tblThuaDatCapGCN] as td on (hs.MaHoSoCapGCN = td.MaHoSoCapGCN) and (hs.MaXa = substring(td.MaDonViHanhChinh,4,3))
+	inner join [dbo].[tblTuDienDonViHanhChinh] as dvhc on td.MaDonViHanhChinh = dvhc.MaDonViHanhChinh
+	where hs.SoPhatHanhGCN <> '' and hs.SoPhatHanhGCN is not null
+END
+
+
+
+
+

@@ -1,0 +1,27 @@
+create procedure spLocDuLieuRac
+as
+BEGIN 
+
+delete	
+FROM [DV3]	
+where 	NoiDung ='' or NoiDung is null or 
+ToBanDo is null or SoThua is null	
+  or Ltrim(Rtrim(ToBanDo)) = '' or Ltrim(Rtrim(SoThua)) =''	
+ or Ltrim(Rtrim(ToBanDo)) = '-' or Ltrim(Rtrim(SoThua)) ='-'	
+  or Ltrim(Rtrim(ToBanDo)) = '/' or Ltrim(Rtrim(SoThua)) ='/'	
+   or Ltrim(Rtrim(ToBanDo)) = '//' or Ltrim(Rtrim(SoThua)) ='//'	
+    or Ltrim(Rtrim(ToBanDo)) = '-/-' or Ltrim(Rtrim(SoThua)) ='-/-'	
+     or Ltrim(Rtrim(ToBanDo)) = '-/' or Ltrim(Rtrim(SoThua)) ='-/'	
+      or Ltrim(Rtrim(lower(ToBanDo))) = 'trích do' or Ltrim(Rtrim(lower(SoThua))) ='trích do'	
+       or Ltrim(Rtrim(ToBanDo)) = '00' or Ltrim(Rtrim(SoThua)) ='00' 	
+        or Ltrim(Rtrim(ToBanDo)) = '(Trích do)' or Ltrim(Rtrim(SoThua)) ='(Trích do)'	
+	     or Ltrim(Rtrim(ToBanDo)) = '0' or Ltrim(Rtrim(SoThua)) ='0'	
+	      or Ltrim(Rtrim(ToBanDo)) = '-\\-' or Ltrim(Rtrim(SoThua)) =N'-\\-'	
+		   or Ltrim(Rtrim(ToBanDo)) = 'TÐ' or Ltrim(Rtrim(SoThua)) =N'TÐ'	
+			or Ltrim(Rtrim(ToBanDo)) = '\"00\"' or Ltrim(Rtrim(SoThua)) ='\"00\"' 	
+			 or Ltrim(Rtrim(ToBanDo)) = '(-/-)' or Ltrim(Rtrim(SoThua)) ='(-/-)'	
+			  or Ltrim(Rtrim(ToBanDo)) = './.' or Ltrim(Rtrim(SoThua)) ='./.'	
+			   or Ltrim(Rtrim(ToBanDo)) = '\\\\' or Ltrim(Rtrim(SoThua)) ='\\\\'
+			   
+
+END

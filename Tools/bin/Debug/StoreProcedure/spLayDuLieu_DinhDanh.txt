@@ -1,0 +1,13 @@
+CREATE PROCEDURE spLayDuLieu_DinhDanh
+AS 
+BEGIN
+
+select distinct hs.MaHoSoCapGCN,ch.SoDinhDanh as SoCMT,hs.SoPhatHanhGCN as SoGCN
+from tblHoSoCapGCN as hs
+inner join tblChuHoSoCapGCN as chs on hs.MaHoSoCapGCN = chs.MaHoSoCapGCN
+inner join tblChu as ch on chs.MaChu = ch.MaChu
+where ch.SoDinhDanh <> '' and hs.SoPhatHanhGCN <> ''  order by hs.MaHoSoCapGCN
+
+END
+
+

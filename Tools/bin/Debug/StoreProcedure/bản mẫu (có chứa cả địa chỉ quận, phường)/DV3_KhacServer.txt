@@ -1,0 +1,17 @@
+CREATE PROCEDURE sp_SMSDichVu3
+	
+@TenQuan nvarchar(200),
+AS
+BEGIN
+insert into DV3(ToBanDo, SoThua, NoiDung)
+	select  td.SoThua,td.ToBanDo,N'+@TenQuan +';'+ dvhc.Ten +';So thua:'+  td.SoThua +';To ban do:'+  td.ToBanDo  +';Dien tich:'+ CONVERT(NVARCHAR(50),td.DienTich) as Noidung
+
+	from  [dbo].[tblHoSoCapGCN] as hs 
+	inner join [dbo].[tblThuaDatCapGCN] as td on (hs.MaHoSoCapGCN = td.MaHoSoCapGCN) and (hs.MaXa = substring(td.MaDonViHanhChinh,4,3))
+	inner join[dbo].[tblTuDienDonViHanhChinh] as dvhc on td.MaDonViHanhChinh = dvhc.MaDonViHanhChinh
+	where td.ToBanDo <> '' and td.ToBanDo is not null and td.SoThua <> '' and td. SoThua is not null
+END
+
+
+
+

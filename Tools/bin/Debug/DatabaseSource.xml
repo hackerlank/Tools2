@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Database Name="georgetown_Thanh_Tri">
+    <Server>DMC-PC</Server>
+    <User>sa</User>
+    <Password>dmc3star</Password>
+    <TenQuan>huyện Thanh Trì</TenQuan>
+    <DichVu1 MaxID="0">true</DichVu1>
+    <DichVu2 MaxID="0">true</DichVu2>
+    <DichVu3 MaxID="0">true</DichVu3>
+    <ThoiDiemTao>19-Oct-15 4:40:56 PM</ThoiDiemTao>
+  </Database>
+  <Database Name="georgetown_TayHo">
+    <Server>DMC-PC</Server>
+    <User>sa</User>
+    <Password>dmc3star</Password>
+    <TenQuan>quận Tây Hồ</TenQuan>
+    <DichVu1 MaxID="0">true</DichVu1>
+    <DichVu2 MaxID="0">true</DichVu2>
+    <DichVu3 MaxID="0">true</DichVu3>
+    <ThoiDiemTao>20-Oct-15 8:29:40 AM</ThoiDiemTao>
+  </Database>
+  <Database Name="HoangMai">
+    <Server>DMC-PC</Server>
+    <User>sa</User>
+    <Password>dmc3star</Password>
+    <TenQuan>quận Hoàng Mai</TenQuan>
+    <DichVu1 MaxID="0">true</DichVu1>
+    <DichVu2 MaxID="0">true</DichVu2>
+    <DichVu3 MaxID="0">true</DichVu3>
+    <ThoiDiemTao>20-Oct-15 4:21:25 PM</ThoiDiemTao>
+  </Database>
+  <Database Name="georgetown_LongBien">
+    <Server>DMC-PC</Server>
+    <User>sa</User>
+    <Password>dmc3star</Password>
+    <TenQuan>quận Long Biên</TenQuan>
+    <DichVu1 MaxID="0">true</DichVu1>
+    <DichVu2 MaxID="0">true</DichVu2>
+    <DichVu3 MaxID="0">true</DichVu3>
+    <ThoiDiemTao>20-Oct-15 4:30:28 PM</ThoiDiemTao>
+  </Database>
+  <Database Name="georgetown_ThanhTri">
+    <Server>THI-PC\SQL2005</Server>
+    <User>sa</User>
+    <Password>dmc3star</Password>
+    <TenQuan>huyện Thanh Trì</TenQuan>
+    <DichVu1 MaxID="0">false</DichVu1>
+    <DichVu2 MaxID="0">false</DichVu2>
+    <DichVu3 MaxID="0">false</DichVu3>
+    <ThoiDiemTao>22-Oct-15 4:34:14 PM</ThoiDiemTao>
+  </Database>
+</root>

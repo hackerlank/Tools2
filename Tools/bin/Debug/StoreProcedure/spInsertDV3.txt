@@ -1,0 +1,15 @@
+create procedure spInsertDV3
+@ToBanDo nvarchar(50),
+@SoThua nvarchar(50),
+@NoiDung nvarchar(max)
+as
+begin
+if(object_id('DV3') is null)
+	CREATE TABLE [DV3](
+		[ToBanDo] [nvarchar](50) NULL,
+		[SoThua] [nvarchar](50) NULL,
+		[NoiDung] [nvarchar](max) NULL
+	) ON [PRIMARY]
+
+insert into DV3(ToBanDo,SoThua,NoiDung) Values (N''+@ToBanDo+'',N''+@SoThua+'',N''+@NoiDung+'')
+end

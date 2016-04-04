@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Database Name="DichVuSMS">
+    <Server>THI-PC\SQL2005</Server>
+    <User>sa</User>
+    <Password>dmc3star</Password>
+  </Database>
+</root>

@@ -1,0 +1,18 @@
+create procedure [dbo].[spInsertToHoSo]
+
+@SoGCN nvarchar(50),
+@NoiDung nvarchar(max)
+as
+begin
+
+if(object_id('tblHoSo') is null)
+	CREATE TABLE [tblHoSo](
+		[SoGCN] [nvarchar](50) NULL,
+		[NoiDung] [nvarchar](max) NULL
+	) ON [PRIMARY]
+
+
+insert into tblHoSo(SoGCN, NoiDung)
+Values (N''+@SoGCN+'',N''+@NoiDung+'')
+
+end

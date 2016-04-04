@@ -1,0 +1,29 @@
+create procedure sp_SMSDichVu1
+as 
+BEGIN
+
+INSERT INTO DV1(SoCMT, NoiDung) 
+select SoCMT, Ten+','+DiaChi+',ST:'+SoThua+',TBD:'+ToBanDo+',DT:'+DienTich+',GCN:'+SoGCN
+from preDV1
+where 
+ToBanDo is not null and SoThua is not null	
+                                 and Ltrim(Rtrim(ToBanDo)) <> '' and Ltrim(Rtrim(SoThua)) <>''	
+                                and Ltrim(Rtrim(ToBanDo)) <> '-' and Ltrim(Rtrim(SoThua)) <>'-'	
+                                 and Ltrim(Rtrim(ToBanDo)) <> '/' and Ltrim(Rtrim(SoThua)) <>'/'	
+                                  and Ltrim(Rtrim(ToBanDo)) <> '//' and Ltrim(Rtrim(SoThua)) <>'//'	
+                                   and Ltrim(Rtrim(ToBanDo)) <> '-/-' and Ltrim(Rtrim(SoThua)) <>'-/-'	
+                                    and Ltrim(Rtrim(ToBanDo)) <> '-/' and Ltrim(Rtrim(SoThua)) <>'-/'	
+                                     and Ltrim(Rtrim(lower(ToBanDo))) <> 'trích đo' and Ltrim(Rtrim(lower(SoThua))) <>'trích đo'	
+                                      and Ltrim(Rtrim(ToBanDo)) <> '00' and Ltrim(Rtrim(SoThua)) <>'00' 	
+                                      and Ltrim(Rtrim(ToBanDo)) <> '(Trích đo)' and Ltrim(Rtrim(SoThua)) <>'(Trích đo)'	
+                                		  and Ltrim(Rtrim(ToBanDo)) <> '0' and Ltrim(Rtrim(SoThua)) <>'0'	
+                                		   and Ltrim(Rtrim(ToBanDo)) <> '-\\-' and Ltrim(Rtrim(SoThua)) <>N'-\\-'	
+                                			and Ltrim(Rtrim(ToBanDo)) <> 'TĐ' and Ltrim(Rtrim(SoThua)) <>N'TĐ'	
+                                			and Ltrim(Rtrim(ToBanDo)) <> '\00\' and Ltrim(Rtrim(SoThua)) <>'\00\' 	
+                                			 and Ltrim(Rtrim(ToBanDo)) <> '(-/-)' and Ltrim(Rtrim(SoThua)) <>'(-/-)'	
+                                			  and Ltrim(Rtrim(ToBanDo)) <> './.' and Ltrim(Rtrim(SoThua)) <>'./.'	
+                                			   and Ltrim(Rtrim(ToBanDo)) <> '\\\\' and Ltrim(Rtrim(SoThua)) <>'\\\\'	
+and DienTich<> '' and DienTich is not null
+
+END
+

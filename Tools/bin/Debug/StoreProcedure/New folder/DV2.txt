@@ -1,0 +1,13 @@
+CREATE PROCEDURE sp_LayDuLieu_DichVu2
+@TenQuan nvarchar(200)
+AS
+BEGIN
+select ch.SoDinhDanh as SoCMT,ch.HoTen,td.DiaChi,@TenQuan as Quan, dvhc.Ten as Phuong, td.SoThua, td.ToBanDo,td.DienTich, hs.SoPhatHanhGCN as SoGCN ,hs.MaHoSoCapGCN as MaHoSo
+	from [tblHoSoCapGCN] as hs 
+	inner join [tblThuaDatCapGCN] as td on (hs.MaHoSoCapGCN = td.MaHoSoCapGCN) and (hs.MaXa = substring(td.MaDonViHanhChinh,4,3))
+	inner join [tblTuDienDonViHanhChinh] as dvhc on td.MaDonViHanhChinh = dvhc.MaDonViHanhChinh
+	left join [tblChuHoSoCapGCN] as chs on hs.MaHoSoCapGCN = chs.MaHoSoCapGCN
+	inner join [tblChu] as ch on ch.MaChu = chs.MaChu
+	where hs.SoPhatHanhGCN <> '' and hs.SoPhatHanhGCN is not null
+END
+

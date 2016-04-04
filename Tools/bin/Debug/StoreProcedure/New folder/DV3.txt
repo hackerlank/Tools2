@@ -1,0 +1,17 @@
+CREATE PROCEDURE sp_LayDuLieu_DichVu3	
+@TenQuan nvarchar(200)
+AS
+BEGIN
+	select  td.SoThua,td.ToBanDo,@TenQuan as Quan, dvhc.Ten as Phuong,td.DienTich
+	from  [tblThuaDatCapGCN] as td 
+	inner join  [tblTuDienDonViHanhChinh] as dvhc on td.MaDonViHanhChinh = dvhc.MaDonViHanhChinh
+	where td.ToBanDo <> '' and td.ToBanDo is not null and td.SoThua <> '' and td. SoThua is not null
+END
+
+
+
+
+
+
+
+
